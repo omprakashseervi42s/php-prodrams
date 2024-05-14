@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTf-8">
+        <title>String Replacement From</title>
+    </head>
+    <body>
+        <h2>String Replacement Form</h2>
+        <form method="post">
+            <?php
+            if($_SERVER["REQUEST_METHOD"] == "POST"){
+                $original = $_POST["Original_Search_String"];
+                $search = $_POST["Search_String"];
+                $replace = $_POST["Replacement_String"];
+
+                echo"<h2>Result:</h2>";
+                echo"Original String: $original<br>";
+                echo"Search String: $search<br>";
+                echo"Replaced String: $replace<br>";
+                echo"Resulted String: " . str_replace($search, $replace, $original);
+            }
+            ?>
+            <br>
+            <input type="text"name="Original_Search_String"required><br><br>
+            <input type="text"name="Search_String"required><br><br>
+            <input type="text"name="Replacement_String"required><br><br>
+            <input type="submit"value="submit">
+        </form>
+        </body>
+        </html>
