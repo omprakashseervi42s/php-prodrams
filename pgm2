@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>XML File Loader</title>
+</head>
+<body>
+    <h3>XML File Loader</h3>
+<?php
+$xml=simplexml_load_file("sample.xml");
+if($xml !== false){
+    echo"<h3>book information<h3>";
+
+    foreach($xml->book as $book){
+        echo "<P>title: " . $book->title . "</p>";
+        echo "<p>author: " . $book->author . "</p>";
+        echo "<p>price: " . $book->price . "</p>";
+        echo"<br>";
+     }
+}else{
+    echo"<p>Error Loading xml<p>";
+}?>
+</body>
+</html>
