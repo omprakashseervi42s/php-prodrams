@@ -1,0 +1,14 @@
+<?php
+$rand = rand();
+$now = time();
+$next = strtotime("+1 minute");
+$diff = abs($next - $now);
+
+if(isset($_COOKIE["random"])){
+    $rand = $_COOKIE["random"];
+}else
+{
+    setcookie("random", $rand, $now+$diff);
+}
+echo "random number is: " .$rand;
+?>
